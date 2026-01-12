@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- =========================
+         CONFIGURAÇÕES BÁSICAS
+    ========================== -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Viewport para responsividade -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =========================
+         SEO PRIMÁRIO
+    ========================== -->
+
+    <!-- Título da página (até 60 caracteres) -->
+    <title>Calculadora Científica | JS Puro</title>
+
+    <!-- Descrição da página (até 160 caracteres) -->
+    <meta name="description" content="Descrição clara e objetiva da página, focada em SEO e taxa de cliques.">
+
+    <!-- Palavras-chave (opcional) -->
+    <meta name="keywords" content="palavra-chave 1, palavra-chave 2, palavra-chave 3">
+
+    <!-- Autor -->
+    <meta name="author" content="Seu Nome ou Marca">
+
+    <!-- Controle de indexação -->
+    <meta name="robots" content="index, follow">
+
+    <!-- =========================
+         OPEN GRAPH (Facebook / WhatsApp)
+    ========================== -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Título da Página | Nome do Site">
+    <meta property="og:description" content="Descrição otimizada para redes sociais.">
+    <meta property="og:image" content="https://seusite.com/assets/img/preview.jpg">
+    <meta property="og:url" content="https://seusite.com">
+    <meta property="og:site_name" content="Nome do Site">
+
+    <!-- =========================
+         TWITTER / X
+    ========================== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Título da Página | Nome do Site">
+    <meta name="twitter:description" content="Descrição otimizada para Twitter/X.">
+    <meta name="twitter:image" content="https://seusite.com/assets/img/preview.jpg">
+
+    <!-- =========================
+         FAVICON
+    ========================== -->
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+    <!-- =========================
+         CSS
+    ========================== -->
+    <!-- Fonte Google: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Conteúdo principal -->
+    <main class="container">
+        <div class="calculator">
+            <!-- Display -->
+            <div class="display">
+                <div id="previous-operand" class="previous-operand"></div>
+                <div id="current-operand" class="current-operand">0</div>
+            </div>
+
+            <!-- Teclado -->
+            <div class="buttons-grid">
+                <!-- Linha 1: Funções de Limpeza e Memória -->
+                <button class="btn btn-function" data-action="clear">AC</button>
+                <button class="btn btn-function" data-action="delete">DEL</button>
+                <button class="btn btn-science" data-value="(">(</button>
+                <button class="btn btn-science" data-value=")">)</button>
+                <button class="btn btn-operator" data-value="%">%</button>
+
+                <!-- Linha 2: Científica 1 -->
+                <button class="btn btn-science" data-value="sin">sin</button>
+                <button class="btn btn-science" data-value="cos">cos</button>
+                <button class="btn btn-science" data-value="tan">tan</button>
+                <button class="btn btn-science" data-value="log">log</button>
+                <button class="btn btn-science" data-value="ln">ln</button>
+
+                <!-- Linha 3 -->
+                <button class="btn btn-number" data-value="7">7</button>
+                <button class="btn btn-number" data-value="8">8</button>
+                <button class="btn btn-number" data-value="9">9</button>
+                <button class="btn btn-operator" data-value="/">÷</button>
+                <button class="btn btn-science" data-value="^">^</button>
+
+                <!-- Linha 4 -->
+                <button class="btn btn-number" data-value="4">4</button>
+                <button class="btn btn-number" data-value="5">5</button>
+                <button class="btn btn-number" data-value="6">6</button>
+                <button class="btn btn-operator" data-value="*">×</button>
+                <button class="btn btn-science" data-value="sqrt">√</button>
+
+                <!-- Linha 5 -->
+                <button class="btn btn-number" data-value="1">1</button>
+                <button class="btn btn-number" data-value="2">2</button>
+                <button class="btn btn-number" data-value="3">3</button>
+                <button class="btn btn-operator" data-value="-">-</button>
+                <button class="btn btn-science" data-value="pi">π</button>
+
+                <!-- Linha 6 -->
+                <button class="btn btn-number" data-value="0">0</button>
+                <button class="btn btn-number" data-value=".">.</button>
+                <button class="btn btn-equal span-two" data-action="calculate">=</button>
+                <button class="btn btn-operator" data-value="+">+</button>
+                <button class="btn btn-science" data-value="e">e</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

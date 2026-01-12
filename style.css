@@ -1,0 +1,147 @@
+/* =========================
+   VARIÁVEIS E RESET
+========================== */
+:root {
+    --bg-color: #121212;
+    --calc-bg: #1e1e1e;
+    --display-bg: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --btn-bg: #2d2d2d;
+    --btn-hover: #3d3d3d;
+    --accent-color: #ff9f0a;
+    --accent-hover: #ffb340;
+    --science-color: #3a3a3a;
+    --function-color: #5c5c5c;
+    --shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    --font-main: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* =========================
+   LAYOUT
+========================== */
+.container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.calculator {
+    background-color: var(--calc-bg);
+    width: 100%;
+    max-width: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   DISPLAY
+========================== */
+.display {
+    background-color: var(--display-bg);
+    padding: 30px 20px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 120px;
+    word-wrap: break-word;
+}
+
+.previous-operand {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    min-height: 1.5rem;
+}
+
+.current-operand {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+/* =========================
+   GRID DE BOTÕES
+========================== */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background-color: #121212;
+    padding: 1px;
+}
+
+.btn {
+    border: none;
+    font-size: 1.1rem;
+    padding: 20px 0;
+    cursor: pointer;
+    background-color: var(--btn-bg);
+    color: var(--text-primary);
+    transition: 0.2s;
+}
+
+.btn:hover {
+    filter: brightness(1.2);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn-number {
+    font-weight: 400;
+}
+
+.btn-operator {
+    background-color: var(--accent-color);
+    color: #000;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.btn-science {
+    background-color: var(--science-color);
+    font-size: 0.9rem;
+}
+
+.btn-function {
+    background-color: var(--function-color);
+    font-weight: 600;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+/* =========================
+   RESPONSIVO
+========================== */
+@media (max-width: 400px) {
+    .current-operand {
+        font-size: 2rem;
+    }
+    .btn {
+        padding: 15px 0;
+        font-size: 1rem;
+    }
+}
